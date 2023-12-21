@@ -1,11 +1,18 @@
 {
-  "name": "bluetooth_classic",
+  "name": "draw_map_web-master",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npx pm2 start index.js --name front",
+    "reset": "npx pm2 restart front",
+    "stop": "npx pm2 stop front",
+    "remove": "npx pm2 kill"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "pm2": "^5.3.0"
+  }
 }

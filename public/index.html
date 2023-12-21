@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link type="text/css" href="./css/index.css" rel="stylesheet" />
+    <script src="./script/Canvas.js"></script>
+    <title>Map</title>
+  </head>
+  <body>
+    <div class="mapFrame">
+      <canvas id="map" class="map" width="1200" height="1200"></canvas>
+    </div>
+    <script>
+      const map = new Canvas("map");
+
+      const mapInterval = setInterval(()=>{
+        loadMap();
+      }, 1000);
+
+      const loadMap = () => {
+        fetch('../data/map.json').then(response=>{
+          response.json().then(data=>{
+            const size = data?.size;
+            const mapData = data?.data;
+            console.log(data);
+            //map.drawText("Start", mapData[0][0], mapData[0][1], "black", "20px Arial");
+            map.resetCanvas();
+            if(mapData?.length > 0) {
+              map.drawMap(size, mapData);
+            }
+          }).catch(console.error);
+        }).catch(console.error);
+      }
+    </script>
+  </body>
+</html>

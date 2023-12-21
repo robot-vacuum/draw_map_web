@@ -1,8 +1,6 @@
 .mapFrame {
-  //flex: 1 0 auto;
   width: 700px;
   height: 700px;
-  margin-top: 20px;
   padding: 10px;
   border: 5px solid #ccc;
   box-sizing: border-box;
@@ -17,13 +15,6 @@ body {
   margin: 0;
   box-sizing: border-box;
   flex-direction: column;
-}
-
-.btnFrame {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-start;
-  height: 30px;
 }
 
 .map {
